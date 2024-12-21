@@ -36,7 +36,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           source: ./server/
-          target: /var/www/3d-tshirt-server/server
+          target: /var/www/3d-tshirt-server
 
       - name: Install Dependencies
         uses: appleboy/ssh-action@master
@@ -45,7 +45,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /var/www/3d-tshirt-server
+            cd /var/www/3d-tshirt-server/server
             npm install
 
       - name: Restart Services
