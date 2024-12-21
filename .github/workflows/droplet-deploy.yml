@@ -36,7 +36,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           source: ./server/
-          target: /var/www/3d-tshirt-server
+          target: /var/www/3d-tshirt-server/server
 
       - name: Install Dependencies
         uses: appleboy/ssh-action@master
@@ -56,4 +56,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             sudo systemctl reload nginx
-            sudo systemctl restart 3d-tshirt-server.service
+            # sudo systemctl restart 3d-tshirt-server.service
